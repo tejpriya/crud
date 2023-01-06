@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUSTOMER DETAILS</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+</head>
+
+<body><br>
+    <h2>CUSTOMER DETAILS</h2>
+    <table>
+        <thead><br><br><br>
+            <tr>
+                <th>no</th>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Customer Email</th>
+                <th>Customer Contact</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for crud in employees %}
+            <tr>
+                <td>{{crud.id}}</td>
+                <td>{{ crud.cid }}</td>
+                <td >{{crud.cname}}</td>
+                <td>{{crud.cemail}}</td>
+                <td>{{crud.ccontact}}</td>
+                <td>
+                    <a href="edit/{{ crud.id }}">Edit</a>
+                    <a href="delete/{{crud.id}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <button><a style="color:black;" href="/emp">Add New Record</a></button>
+</body>
+
+</html>

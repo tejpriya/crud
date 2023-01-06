@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+    <form method="POST" action="/update/{{employee.id}}">
+        {% csrf_token %}
+        <div>
+            <br>
+            <p>
+                <h3>Update Details</h3>
+            </p>
+        </div>
+        <div>
+            <p>Customer Id:</p>
+            <div>
+                <input type="text" class="EmployeeForm" value="{{employee.cid}}" name="cid"/>
+            </div>
+        </div>
+        <div>
+            <p>Customer Name::</p>
+        </div>
+            <div>
+                <input type="text" class="EmployeeForm" value="{{employee.cname}}"name="cname"/>
+            </div>
+        </div>
+        <div>
+            <p>Customer Email:</p> 
+        </div>
+            <div>
+                <input type="email"class="EmployeeForm" value="{{employee.cemail}}"name="cemail"/>
+            </div>
+        </div>
+        <div>
+            <p>Customer contact:</p>
+        </div>
+            <div>
+                <input type="text" class="EmployeeForm" value="{{employee.ccontact}}" name="ccontact"/>
+            </div>
+        </div>
+        <div>
+            <br>
+            <button type="submit">Update</button>
+        </div>
+    </form>
+    </body>
+</html>
